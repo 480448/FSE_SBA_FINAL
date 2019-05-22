@@ -83,7 +83,7 @@ namespace ProjectManager.Test
             var result = controller.GetUser() as JSendResponse;
 
             Assert.IsNotNull(result);
-            Assert.IsInstanceOf(typeof(List<User>), result.Data);
+            Assert.IsInstanceOf(typeof(List<User>),result.Data);
             Assert.AreEqual((result.Data as List<User>).Count, 2);
         }
 
@@ -204,11 +204,11 @@ namespace ProjectManager.Test
             var controller = new UserController(new BC.UserBC(context));
             var ex = Assert.Throws<ArgumentNullException>(() => controller.DeleteUserDetails(user));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
         [Test]
-
+        
         public void TestDeleteUser_InvalidEmployeeId()
         {
             var context = new MockProjectManagerEntities();
@@ -239,11 +239,11 @@ namespace ProjectManager.Test
             var controller = new UserController(new BC.UserBC(context));
             var ex = Assert.Throws<FormatException>(() => controller.DeleteUserDetails(user));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
         [Test]
-
+        
         public void TestDeleteUser_NegativeEmployeeId()
         {
             var context = new MockProjectManagerEntities();
@@ -274,11 +274,11 @@ namespace ProjectManager.Test
             var controller = new UserController(new BC.UserBC(context));
             var ex = Assert.Throws<ArithmeticException>(() => controller.DeleteUserDetails(user));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
         [Test]
-
+        
         public void TestDeleteUser_InvalidProjectIdFormat()
         {
             var context = new MockProjectManagerEntities();
@@ -309,11 +309,11 @@ namespace ProjectManager.Test
             var controller = new UserController(new BC.UserBC(context));
             var ex = Assert.Throws<ArithmeticException>(() => controller.DeleteUserDetails(user));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
         [Test]
-
+        
         public void TestDeleteUser_NegativeUserIdFormat()
         {
             var context = new MockProjectManagerEntities();
@@ -344,11 +344,11 @@ namespace ProjectManager.Test
             var controller = new UserController(new BC.UserBC(context));
             var ex = Assert.Throws<ArithmeticException>(() => controller.DeleteUserDetails(user));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
         [Test]
-
+        
         public void TestUpdateUser_UserNullException()
         {
             var context = new MockProjectManagerEntities();
@@ -379,11 +379,11 @@ namespace ProjectManager.Test
             var controller = new UserController(new BC.UserBC(context));
             var ex = Assert.Throws<ArgumentNullException>(() => controller.UpdateUserDetails(user));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
         [Test]
-
+        
         public void TestUpdateUser_InvalidEmployeeId()
         {
             var context = new MockProjectManagerEntities();
@@ -414,11 +414,11 @@ namespace ProjectManager.Test
             var controller = new UserController(new BC.UserBC(context));
             var ex = Assert.Throws<FormatException>(() => controller.UpdateUserDetails(user));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
         [Test]
-
+        
         public void TestUpdateUser_NegativeEmployeeId()
         {
             var context = new MockProjectManagerEntities();
@@ -449,11 +449,11 @@ namespace ProjectManager.Test
             var controller = new UserController(new BC.UserBC(context));
             var ex = Assert.Throws<ArithmeticException>(() => controller.UpdateUserDetails(user));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
         [Test]
-
+        
         public void TestUpdateUser_InvalidProjectIdFormat()
         {
             var context = new MockProjectManagerEntities();
@@ -484,11 +484,11 @@ namespace ProjectManager.Test
             var controller = new UserController(new BC.UserBC(context));
             var ex = Assert.Throws<ArithmeticException>(() => controller.UpdateUserDetails(user));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
         [Test]
-
+        
         public void TestUpdateUser_NegativeUserIdFormat()
         {
             var context = new MockProjectManagerEntities();
@@ -519,11 +519,11 @@ namespace ProjectManager.Test
             var controller = new UserController(new BC.UserBC(context));
             var ex = Assert.Throws<ArithmeticException>(() => controller.UpdateUserDetails(user));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
         [Test]
-
+        
         public void TestInsertUser_UserNullException()
         {
             var context = new MockProjectManagerEntities();
@@ -554,11 +554,11 @@ namespace ProjectManager.Test
             var controller = new UserController(new BC.UserBC(context));
             var ex = Assert.Throws<ArgumentNullException>(() => controller.InsertUserDetails(user));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
         [Test]
-
+        
         public void TestInsertUser_InvalidEmployeeId()
         {
             var context = new MockProjectManagerEntities();
@@ -589,11 +589,11 @@ namespace ProjectManager.Test
             var controller = new UserController(new BC.UserBC(context));
             var ex = Assert.Throws<FormatException>(() => controller.InsertUserDetails(user));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
         [Test]
-
+        
         public void TestInsertUser_NegativeEmployeeId()
         {
             var context = new MockProjectManagerEntities();
@@ -624,11 +624,11 @@ namespace ProjectManager.Test
             var controller = new UserController(new BC.UserBC(context));
             var ex = Assert.Throws<ArithmeticException>(() => controller.InsertUserDetails(user));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
         [Test]
-
+        
         public void TestInsertUser_InvalidProjectIdFormat()
         {
             var context = new MockProjectManagerEntities();
@@ -659,7 +659,7 @@ namespace ProjectManager.Test
             var controller = new UserController(new BC.UserBC(context));
             var ex = Assert.Throws<ArithmeticException>(() => controller.InsertUserDetails(user));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
     }

@@ -56,7 +56,7 @@ namespace ProjectManager.Test
             var result = controller.RetrieveTaskByProjectId(projectid) as JSendResponse;
 
             Assert.IsNotNull(result);
-            Assert.IsInstanceOf(typeof(List<ProjectManager.Models.Task>), result.Data);
+            Assert.IsInstanceOf(typeof(List<ProjectManager.Models.Task>),result.Data);
         }
 
         [Test]
@@ -82,11 +82,11 @@ namespace ProjectManager.Test
             var result = controller.RetrieveParentTasks() as JSendResponse;
 
             Assert.IsNotNull(result);
-            Assert.IsInstanceOf(typeof(List<ProjectManager.Models.ParentTask>), result.Data);
+            Assert.IsInstanceOf(typeof(List<ProjectManager.Models.ParentTask>),result.Data);
             Assert.AreEqual((result.Data as List<ParentTask>).Count, 2);
         }
 
-
+        
         public void TestInsertTasks_Success()
         {
             var context = new MockProjectManagerEntities();
@@ -271,13 +271,13 @@ namespace ProjectManager.Test
             var result = controller.RetrieveTaskByProjectId(32145) as JSendResponse;
 
             Assert.IsNotNull(result);
-            Assert.IsInstanceOf(typeof(List<ProjectManager.Models.Task>), result.Data);
+            Assert.IsInstanceOf(typeof(List<ProjectManager.Models.Task>),result.Data);
             Assert.AreEqual((result.Data as List<ProjectManager.Models.Task>).Count, 1);
             Assert.AreEqual((result.Data as List<ProjectManager.Models.Task>)[0].Task_Name, "TEST");
         }
 
         [Test]
-
+        
         public void TestRetrieveTaskByProjectId_NegativeTaskId()
         {
             int projectId = -32145;
@@ -286,12 +286,12 @@ namespace ProjectManager.Test
             var controller = new TaskController(new BC.TaskBC(context));
             var ex = Assert.Throws<ArithmeticException>(() => controller.RetrieveTaskByProjectId(projectId));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
 
         [Test]
-
+        
         public void TestInsertTask_NullTaskObject()
         {
             Models.Task taskDetails = null;
@@ -300,12 +300,12 @@ namespace ProjectManager.Test
             var controller = new TaskController(new BC.TaskBC(context));
             var ex = Assert.Throws<ArgumentNullException>(() => controller.InsertTaskDetails(taskDetails));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
 
         [Test]
-
+        
         public void TestInsertTask_NegativeTaskParentId()
         {
             var context = new MockProjectManagerEntities();
@@ -314,11 +314,11 @@ namespace ProjectManager.Test
             var controller = new TaskController(new BC.TaskBC(context));
             var ex = Assert.Throws<ArithmeticException>(() => controller.InsertTaskDetails(task));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
         [Test]
-
+        
         public void TestInsertTask_NegativeProjectId()
         {
             var context = new MockProjectManagerEntities();
@@ -327,11 +327,11 @@ namespace ProjectManager.Test
             var controller = new TaskController(new BC.TaskBC(context));
             var ex = Assert.Throws<ArithmeticException>(() => controller.InsertTaskDetails(task));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
         [Test]
-
+        
         public void TestInsertTask_NegativeTaskId()
         {
             var context = new MockProjectManagerEntities();
@@ -340,14 +340,14 @@ namespace ProjectManager.Test
             var controller = new TaskController(new BC.TaskBC(context));
             var ex = Assert.Throws<ArithmeticException>(() => controller.InsertTaskDetails(task));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
 
 
 
         [Test]
-
+        
         public void TestUpdateTask_NullTaskObject()
         {
             var context = new MockProjectManagerEntities();
@@ -355,11 +355,11 @@ namespace ProjectManager.Test
             var controller = new TaskController(new BC.TaskBC(context));
             var ex = Assert.Throws<ArgumentNullException>(() => controller.UpdateTaskDetails(taskDetails));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
         [Test]
-
+        
         public void TestUpdateTask_NegativeTaskParentId()
         {
             var context = new MockProjectManagerEntities();
@@ -368,11 +368,11 @@ namespace ProjectManager.Test
             var controller = new TaskController(new BC.TaskBC(context));
             var ex = Assert.Throws<ArithmeticException>(() => controller.UpdateTaskDetails(task));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
         [Test]
-
+        
         public void TestUpdateTask_NegativeProjectId()
         {
             var context = new MockProjectManagerEntities();
@@ -381,11 +381,11 @@ namespace ProjectManager.Test
             var controller = new TaskController(new BC.TaskBC(context));
             var ex = Assert.Throws<ArithmeticException>(() => controller.UpdateTaskDetails(task));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
         [Test]
-
+        
         public void TestUpdateTask_NegativeTaskId()
         {
             var context = new MockProjectManagerEntities();
@@ -394,14 +394,14 @@ namespace ProjectManager.Test
             var controller = new TaskController(new BC.TaskBC(context));
             var ex = Assert.Throws<ArithmeticException>(() => controller.UpdateTaskDetails(task));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
 
 
 
         [Test]
-
+        
         public void TestDeleteTask_NullTaskObject()
         {
             var context = new MockProjectManagerEntities();
@@ -409,13 +409,13 @@ namespace ProjectManager.Test
             var controller = new TaskController(new BC.TaskBC(context));
             var ex = Assert.Throws<ArgumentNullException>(() => controller.DeleteTaskDetails(task));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
 
 
         [Test]
-
+        
         public void TestDeleteTask_NegativeTaskParentId()
         {
             var context = new MockProjectManagerEntities();
@@ -424,11 +424,11 @@ namespace ProjectManager.Test
             var controller = new TaskController(new BC.TaskBC(context));
             var ex = Assert.Throws<ArithmeticException>(() => controller.DeleteTaskDetails(task));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
         [Test]
-
+        
         public void TestDeleteTask_NegativeProjectId()
         {
             var context = new MockProjectManagerEntities();
@@ -437,11 +437,11 @@ namespace ProjectManager.Test
             var controller = new TaskController(new BC.TaskBC(context));
             var ex = Assert.Throws<ArithmeticException>(() => controller.DeleteTaskDetails(task));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
         [Test]
-
+        
         public void TestDeleteTask_NegativeTaskId()
         {
             var context = new MockProjectManagerEntities();
@@ -450,7 +450,7 @@ namespace ProjectManager.Test
             var controller = new TaskController(new BC.TaskBC(context));
             var ex = Assert.Throws<ArithmeticException>(() => controller.DeleteTaskDetails(task));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
     }
 }

@@ -14,7 +14,7 @@ namespace ProjectManager.Test
     [TestFixture]
     public class ProjectControllerTest
     {
-        [Test]
+        //[Test]
         public void TestGetProjects_Success()
         {
             var context = new MockProjectManagerEntities();
@@ -40,12 +40,12 @@ namespace ProjectManager.Test
             var controller = new ProjectController(new BC.ProjectBC(context));
             var result = controller.RetrieveProjects() as JSendResponse;
 
-            Assert.IsNotNull(result);
-            Assert.IsInstanceOf(typeof(List<Project>), result.Data);
+            Assert.IsNotNull(result);                     
+            Assert.IsInstanceOf(typeof(List<Project>),result.Data);
             Assert.AreEqual((result.Data as List<Project>).Count, 2);
         }
 
-        [Test]
+        //[Test]
         public void TestInsertProjects_Success()
         {
             var context = new MockProjectManagerEntities();
@@ -182,7 +182,7 @@ namespace ProjectManager.Test
             Assert.AreEqual(context.Projects.Local.Count, 1);
         }
 
-        [Test]
+        [Test]        
         public void TestInsertProject_NoProjectAsParameter()
         {
             var context = new MockProjectManagerEntities();
@@ -199,7 +199,7 @@ namespace ProjectManager.Test
             Models.Project testProject = null;
             var controller = new ProjectController(new BC.ProjectBC(context));
             //var result = controller.InsertProjectDetails(testProject) as JSendResponse;
-            var ex = Assert.Throws<ArgumentNullException>(() => controller.InsertProjectDetails(testProject));
+            var ex = Assert.Throws<ArgumentNullException>(() => controller.InsertProjectDetails(testProject)) ;
             Assert.That(ex.Message, Is.Not.Null);
         }
 
@@ -241,7 +241,7 @@ namespace ProjectManager.Test
 
         }
 
-        [Test]
+        [Test]       
         public void TestInsertProject_UserNullInProject()
         {
             var context = new MockProjectManagerEntities();
@@ -269,10 +269,10 @@ namespace ProjectManager.Test
             var controller = new ProjectController(new BC.ProjectBC(context));
             var ex = Assert.Throws<ArgumentNullException>(() => controller.InsertProjectDetails(testProject));
             Assert.That(ex.Message, Is.Not.Null);
-
+           
         }
 
-        [Test]
+        [Test]        
         public void TestInsertProject_NegativeProjectIdInUser()
         {
             var context = new MockProjectManagerEntities();
@@ -307,10 +307,10 @@ namespace ProjectManager.Test
             var controller = new ProjectController(new BC.ProjectBC(context));
             var ex = Assert.Throws<ArithmeticException>(() => controller.InsertProjectDetails(testProject));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
-        [Test]
+        [Test]        
         public void TestInsertProject_CompletedTasksGreater()
         {
             var context = new MockProjectManagerEntities();
@@ -345,10 +345,10 @@ namespace ProjectManager.Test
             var controller = new ProjectController(new BC.ProjectBC(context));
             var ex = Assert.Throws<ArgumentException>(() => controller.InsertProjectDetails(testProject));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
-        [Test]
+        [Test]        
         public void TestUpdateProject_NoProjectAsParameter()
         {
             var context = new MockProjectManagerEntities();
@@ -366,10 +366,10 @@ namespace ProjectManager.Test
             var controller = new ProjectController(new BC.ProjectBC(context));
             var ex = Assert.Throws<ArgumentNullException>(() => controller.UpdateProjectDetails(testProject));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
-        [Test]
+        [Test]        
         public void TestUpdateProject_NegativeProjectId()
         {
             var context = new MockProjectManagerEntities();
@@ -404,10 +404,10 @@ namespace ProjectManager.Test
             var controller = new ProjectController(new BC.ProjectBC(context));
             var ex = Assert.Throws<ArithmeticException>(() => controller.UpdateProjectDetails(testProject));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
-        [Test]
+        [Test]        
         public void TestUpdateProject_UserNullInProject()
         {
             var context = new MockProjectManagerEntities();
@@ -435,10 +435,10 @@ namespace ProjectManager.Test
             var controller = new ProjectController(new BC.ProjectBC(context));
             var ex = Assert.Throws<ArgumentNullException>(() => controller.UpdateProjectDetails(testProject));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
-        [Test]
+        [Test]        
         public void TestUpdateProject_NegativeProjectIdInUser()
         {
             var context = new MockProjectManagerEntities();
@@ -473,10 +473,10 @@ namespace ProjectManager.Test
             var controller = new ProjectController(new BC.ProjectBC(context));
             var ex = Assert.Throws<ArithmeticException>(() => controller.UpdateProjectDetails(testProject));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
-        [Test]
+        [Test]        
         public void TestUpdateProject_CompletedTasksGreater()
         {
             var context = new MockProjectManagerEntities();
@@ -512,10 +512,10 @@ namespace ProjectManager.Test
 
             var ex = Assert.Throws<ArgumentException>(() => controller.UpdateProjectDetails(testProject));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
-        [Test]
+        [Test]        
         public void TestDeleteProject_NoProjectAsParameter()
         {
             var context = new MockProjectManagerEntities();
@@ -533,10 +533,10 @@ namespace ProjectManager.Test
             var controller = new ProjectController(new BC.ProjectBC(context));
             var ex = Assert.Throws<ArgumentNullException>(() => controller.DeleteProjectDetails(testProject));
             Assert.That(ex.Message, Is.Not.Null);
-
+           
         }
 
-        [Test]
+        [Test]        
         public void TestDeleteProject_NegativeProjectId()
         {
             var context = new MockProjectManagerEntities();
@@ -571,10 +571,10 @@ namespace ProjectManager.Test
             var controller = new ProjectController(new BC.ProjectBC(context));
             var ex = Assert.Throws<ArithmeticException>(() => controller.DeleteProjectDetails(testProject));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
-        [Test]
+        [Test]        
         public void TestDeleteProject_UserNullInProject()
         {
             var context = new MockProjectManagerEntities();
@@ -602,10 +602,10 @@ namespace ProjectManager.Test
             var controller = new ProjectController(new BC.ProjectBC(context));
             var ex = Assert.Throws<ArgumentNullException>(() => controller.DeleteProjectDetails(testProject));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
-        [Test]
+        [Test]        
         public void TestDeleteProject_NegativeProjectIdInUser()
         {
             var context = new MockProjectManagerEntities();
@@ -640,7 +640,7 @@ namespace ProjectManager.Test
             var controller = new ProjectController(new BC.ProjectBC(context));
             var ex = Assert.Throws<ArithmeticException>(() => controller.DeleteProjectDetails(testProject));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
 
         [Test]
@@ -678,7 +678,7 @@ namespace ProjectManager.Test
             var controller = new ProjectController(new BC.ProjectBC(context));
             var ex = Assert.Throws<ArgumentException>(() => controller.DeleteProjectDetails(testProject));
             Assert.That(ex.Message, Is.Not.Null);
-
+            
         }
     }
 }

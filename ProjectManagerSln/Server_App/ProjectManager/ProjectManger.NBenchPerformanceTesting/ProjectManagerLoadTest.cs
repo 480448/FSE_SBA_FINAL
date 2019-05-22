@@ -11,7 +11,7 @@ using BC = ProjectManager.BC;
 
 namespace ProjectManger.NBenchPerformanceTesting
 {
-    public class ProjectManagerLoadTest
+    public class ProjectManagerLoadTest 
     {
         private readonly Dictionary<int, int> dictionary = new Dictionary<int, int>();
 
@@ -25,12 +25,12 @@ namespace ProjectManger.NBenchPerformanceTesting
         public void Setup(BenchmarkContext benchContext)
         {
             addCounter = benchContext.GetCounter(AddCounterName);
-            // key = 0;
+           // key = 0;
         }
 
-        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500,RunMode = RunMode.Iterations, TestMode =TestMode.Test,SkipWarmups =true)]
         [CounterThroughputAssertion(AddCounterName, MustBe.GreaterThan, AcceptableMinAddThroughput)]
-
+        
         [CounterMeasurement(AddCounterName)]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
         [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
@@ -61,9 +61,9 @@ namespace ProjectManger.NBenchPerformanceTesting
             addCounter.Increment();
         }
 
-        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Iterations, TestMode =TestMode.Test, SkipWarmups = true)]
         [CounterThroughputAssertion(AddCounterName, MustBe.GreaterThan, AcceptableMinAddThroughput)]
-
+        
         [CounterMeasurement(AddCounterName)]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
         [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
@@ -102,9 +102,9 @@ namespace ProjectManger.NBenchPerformanceTesting
             addCounter.Increment();
         }
 
-        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Iterations, TestMode =TestMode.Test, SkipWarmups = true)]
         [CounterThroughputAssertion(AddCounterName, MustBe.GreaterThan, AcceptableMinAddThroughput)]
-
+        
         [CounterMeasurement(AddCounterName)]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
         [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
@@ -156,9 +156,9 @@ namespace ProjectManger.NBenchPerformanceTesting
             addCounter.Increment();
         }
 
-        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Iterations, TestMode =TestMode.Test, SkipWarmups = true)]
         [CounterThroughputAssertion(AddCounterName, MustBe.GreaterThan, AcceptableMinAddThroughput)]
-
+        
         [CounterMeasurement(AddCounterName)]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
         [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
@@ -208,9 +208,9 @@ namespace ProjectManger.NBenchPerformanceTesting
             addCounter.Increment();
         }
 
-        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Iterations, TestMode =TestMode.Test, SkipWarmups = true)]
         [CounterThroughputAssertion(AddCounterName, MustBe.GreaterThan, AcceptableMinAddThroughput)]
-
+        
         [CounterMeasurement(AddCounterName)]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
         [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
@@ -256,9 +256,9 @@ namespace ProjectManger.NBenchPerformanceTesting
             addCounter.Increment();
         }
 
-        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Iterations, TestMode =TestMode.Test, SkipWarmups = true)]
         [CounterThroughputAssertion(AddCounterName, MustBe.GreaterThan, AcceptableMinAddThroughput)]
-
+        
         [CounterMeasurement(AddCounterName)]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
         [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
@@ -285,9 +285,9 @@ namespace ProjectManger.NBenchPerformanceTesting
             addCounter.Increment();
         }
 
-        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Iterations, TestMode =TestMode.Test, SkipWarmups = true)]
         [CounterThroughputAssertion(AddCounterName, MustBe.GreaterThan, AcceptableMinAddThroughput)]
-
+        
         [CounterMeasurement(AddCounterName)]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
         [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
@@ -328,9 +328,9 @@ namespace ProjectManger.NBenchPerformanceTesting
             addCounter.Increment();
         }
 
-        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Iterations, TestMode =TestMode.Test, SkipWarmups = true)]
         [CounterThroughputAssertion(AddCounterName, MustBe.GreaterThan, AcceptableMinAddThroughput)]
-
+        
         [CounterMeasurement(AddCounterName)]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
         [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
@@ -385,9 +385,9 @@ namespace ProjectManger.NBenchPerformanceTesting
             addCounter.Increment();
         }
 
-        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Iterations, TestMode =TestMode.Test, SkipWarmups = true)]
         [CounterThroughputAssertion(AddCounterName, MustBe.GreaterThan, AcceptableMinAddThroughput)]
-
+        
         [CounterMeasurement(AddCounterName)]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
         [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
@@ -425,9 +425,9 @@ namespace ProjectManger.NBenchPerformanceTesting
 
         }
 
-        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Iterations, TestMode =TestMode.Test, SkipWarmups = true)]
         [CounterThroughputAssertion(AddCounterName, MustBe.GreaterThan, AcceptableMinAddThroughput)]
-
+        
         [CounterMeasurement(AddCounterName)]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
         [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
@@ -483,9 +483,9 @@ namespace ProjectManger.NBenchPerformanceTesting
             addCounter.Increment();
         }
 
-        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Iterations, TestMode =TestMode.Test, SkipWarmups = true)]
         [CounterThroughputAssertion(AddCounterName, MustBe.GreaterThan, AcceptableMinAddThroughput)]
-
+        
         [CounterMeasurement(AddCounterName)]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
         [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
@@ -518,9 +518,9 @@ namespace ProjectManger.NBenchPerformanceTesting
             addCounter.Increment();
         }
 
-        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Iterations, TestMode =TestMode.Test, SkipWarmups = true)]
         [CounterThroughputAssertion(AddCounterName, MustBe.GreaterThan, AcceptableMinAddThroughput)]
-
+        
         [CounterMeasurement(AddCounterName)]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
         [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
@@ -537,9 +537,9 @@ namespace ProjectManger.NBenchPerformanceTesting
             addCounter.Increment();
         }
 
-        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Iterations, TestMode =TestMode.Test, SkipWarmups = true)]
         [CounterThroughputAssertion(AddCounterName, MustBe.GreaterThan, AcceptableMinAddThroughput)]
-
+        
         [CounterMeasurement(AddCounterName)]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
         [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
@@ -570,9 +570,9 @@ namespace ProjectManger.NBenchPerformanceTesting
             addCounter.Increment();
         }
 
-        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Iterations, TestMode = TestMode.Test, SkipWarmups = true)]
+        [PerfBenchmark(NumberOfIterations = 500, RunMode = RunMode.Iterations, TestMode =TestMode.Test, SkipWarmups = true)]
         [CounterThroughputAssertion(AddCounterName, MustBe.GreaterThan, AcceptableMinAddThroughput)]
-
+        
         [CounterMeasurement(AddCounterName)]
         [GcMeasurement(GcMetric.TotalCollections, GcGeneration.AllGc)]
         [MemoryMeasurement(MemoryMetric.TotalBytesAllocated)]
@@ -615,7 +615,7 @@ namespace ProjectManger.NBenchPerformanceTesting
         [PerfCleanup]
         public void Cleanup(BenchmarkContext benchContext)
         {
-
+            
         }
     }
 }
